@@ -1,0 +1,5 @@
+These are 6 directories with inputs for the six sets of FEP simulations. Execute
+./runscript.sh
+in each set of simulations.
+
+To generate data for the simulations with only 3 lambda states extend the simulations in 0, 3 and 7 (in each of the six sets of simulations) to 13.4 ns.

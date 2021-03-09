@@ -1,0 +1,79 @@
+; RUN CONTROL PARAMETERS =
+integrator               = sd
+nsteps                   = 15000000
+; start time and timestep in ps =
+tinit                    = 0.0
+dt                       = 0.002
+
+nstcalcenergy            = 100
+
+; OUTPUT CONTROL OPTIONS =
+; Output frequency for coords (x), velocities (v) and forces (f) =
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+; Output frequency for energies to log file and energy file =
+nstlog                   = 10000
+nstenergy                = 1000
+nstdhdl                  = 100
+; Output frequency and precision for xtc file =
+nstxout-compressed      = 50000
+compressed-x-precision  = 1000
+
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+;
+;tcoupl                  = v-rescale ; not used for sd integrator
+;tc_grps                 = water_and_ions other
+;tau_t                   = 1.0 1.0
+;ref_t                   = 303.15 303.15
+tc_grps                 = system
+tau_t                   = 2.0
+ref_t                   = 303.15
+; pressure coupling
+pcoupl                   = parrinello-rahman ; Gives a warning if used during equilibration.
+;pcoupl                   = berendsen
+pcoupltype               = isotropic
+nstpcouple               = 10
+; Time constant (ps), compressibility (1/bar) and reference P (bar)
+tau-p                    = 10
+compressibility          = 4.5e-5
+ref-p                    = 1.0
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = system
+;
+refcoord_scaling        = all
+
+;dispcorr                = EnerPres
+dispcorr                = No
+
+; GENERATE VELOCITIES FOR STARTUP RUN =
+;gen_temp                 = 303.15
+
+free-energy              = yes
+couple-lambda0           = none
+couple-lambda1           = vdwq
+couple-moltype           = testosterone
+couple-intramol          = no
+init-lambda-state        = 12
+vdw-lambdas               = 1.0 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.90 0.80 0.71 0.63 0.56 0.50 0.45 0.40 0.36 0.33 0.30 0.28 0.26 0.24 0.22 0.20 0.16 0.12 0.00
+coul-lambdas              = 1.0 0.88 0.75 0.62 0.48 0.34 0.17 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+calc-lambda-neighbors    = -1
+separate-dhdl-file       = no
+sc_alpha                 = 0.5
+sc_sigma                 = 0.3
+sc_power                 = 1
+sc_coul                  = no
+

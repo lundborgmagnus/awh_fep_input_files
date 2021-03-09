@@ -1,0 +1,125 @@
+[ atomtypes ]
+;name	at.num	mass	charge	ptype	sigma	epsilon
+C321	6	12.01100	0.050000	A	0.358141284692	0.234304 
+C331	6	12.01100	-0.270000	A	0.365268474438	0.326352 
+HGA3	1	1.008000	0.090000	A	0.238760856462	0.100416 
+O311	8	15.99900	-0.650000	A	0.314487247504	0.8037464 
+HGA2	1	1.008000	0.090000	A	0.238760856462	0.14644 
+HGP1	1	1.008000	0.420000	A	0.0400013524445	0.192464 
+
+[ bondtypes ]
+; i	j	func	b0	kb
+C321	C331	1	0.1528	186188.0
+C331	HGA3	1	0.1111	269449.6
+C321	O311	1	0.142	358150.4
+C321	HGA2	1	0.1111	258571.2
+HGP1	O311	1	0.096	456056.0
+
+[ angletypes ]
+; i	j	k	func	th0	cth	ub0	cub
+O311	C321	C331	5	110.10	633.4576	0.0	0.0
+HGA2	C321	C331	5	110.10	289.5328	0.0	0.0
+C321	C331	HGA3	5	110.10	289.5328	0.0	0.0
+HGA3	C331	HGA3	5	108.40	297.064	0.0	0.0
+HGA2	C321	O311	5	108.89	384.0912	0.0	0.0
+C321	O311	HGP1	5	106.00	418.4	0.0	0.0
+HGA2	C321	HGA2	5	109.00	297.064	0.0	0.0
+
+[ dihedraltypes ]
+; i	j	k	l	func	phi0	cp	mult
+HGP1	O311	C321	C331	9	0.00	0.58576	2
+HGP1	O311	C321	C331	9	0.00	1.00416	3
+HGP1	O311	C321	C331	9	0.00	4.72792	1
+O311	C321	C331	HGA3	9	0.00	0.66944	3
+HGA2	C321	C331	HGA3	9	0.00	0.66944	3
+HGA2	C321	O311	HGP1	9	0.00	0.0	3
+
+[ dihedraltypes ]
+; i	j	k	l	func	q0	cq
+[ moleculetype ]
+; Name            nrexcl
+ethanol	3
+
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 LIG rtp LIG  q  0.0
+;  ai    aj funct            c0            c1            c2            c3
+[ atoms ]
+#ifdef HEAVY_H
+     1       C331      1    LIG     C1      1      -0.27      5.963 ; qtot -0.27
+     2       C321      1    LIG     C2      2       0.05      7.979 ; qtot -0.22
+     3       O311      1    LIG    OC2      3      -0.65     13.983 ; qtot -0.87
+     4       HGA3      1    LIG   HC11      4       0.09      3.024 ; qtot -0.78
+     5       HGA3      1    LIG   HC12      5       0.09      3.024 ; qtot -0.69
+     6       HGA3      1    LIG   HC13      6       0.09      3.024 ; qtot -0.6
+     7       HGA2      1    LIG   HC21      7       0.09      3.024 ; qtot -0.51
+     8       HGA2      1    LIG   HC22      8       0.09      3.024 ; qtot -0.42
+     9       HGP1      1    LIG    HO2      9       0.42      3.024 ; qtot 0
+
+#else
+     1       C331      1    LIG     C1      1      -0.27     12.011   ; qtot -0.27
+     2       C321      1    LIG     C2      2       0.05     12.011   ; qtot -0.22
+     3       O311      1    LIG    OC2      3      -0.65     15.999   ; qtot -0.87
+     4       HGA3      1    LIG   HC11      4       0.09      1.008   ; qtot -0.78
+     5       HGA3      1    LIG   HC12      5       0.09      1.008   ; qtot -0.69
+     6       HGA3      1    LIG   HC13      6       0.09      1.008   ; qtot -0.6
+     7       HGA2      1    LIG   HC21      7       0.09      1.008   ; qtot -0.51
+     8       HGA2      1    LIG   HC22      8       0.09      1.008   ; qtot -0.42
+     9       HGP1      1    LIG    HO2      9       0.42      1.008   ; qtot 0
+
+#endif
+[ bonds ]
+    1     2     1 
+    1     4     1 
+    1     5     1 
+    1     6     1 
+    2     3     1 
+    2     7     1 
+    2     8     1 
+    3     9     1 
+
+[ pairs ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     9     1 
+    3     4     1 
+    3     5     1 
+    3     6     1 
+    4     7     1 
+    4     8     1 
+    5     7     1 
+    5     8     1 
+    6     7     1 
+    6     8     1 
+    7     9     1 
+    8     9     1 
+
+[ angles ]
+;  ai    aj    ak funct            c0            c1            c2            c3
+    2     1     4     5 
+    2     1     5     5 
+    2     1     6     5 
+    4     1     5     5 
+    4     1     6     5 
+    5     1     6     5 
+    1     2     3     5 
+    1     2     7     5 
+    1     2     8     5 
+    3     2     7     5 
+    3     2     8     5 
+    7     2     8     5 
+    2     3     9     5 
+
+[ dihedrals ]
+;  ai    aj    ak    al funct            c0            c1            c2            c3            c4            c5
+    4     1     2     3     9 
+    4     1     2     7     9 
+    4     1     2     8     9 
+    5     1     2     3     9 
+    5     1     2     7     9 
+    5     1     2     8     9 
+    6     1     2     3     9 
+    6     1     2     7     9 
+    6     1     2     8     9 
+    1     2     3     9     9 
+    7     2     3     9     9 
+    8     2     3     9     9 
+

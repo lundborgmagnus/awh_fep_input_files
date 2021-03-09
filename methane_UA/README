@@ -1,0 +1,4 @@
+The methane UA input from Paliwal and Shirts, J. Chem. Theory Comput., 2021, 7, 4115–4134 and more specifically http://www.alchemistry.org/wiki/The_Simple_Small_Molecule_Solvation_Benchmark_Test_Set.
+The input coordinates 1 to 6 are from the first six equilibrium configurations. The topology and interaction parameters are not changed. The grompp.mdp parameters are adapted to the current GROMACS
+version. Changes include using an sd integrator with a Parinello-Rahman barostat instead of a MD velocity Verlet algorithm with a Martyna-Tuckerman-Tobias-Klein barostat and a Nosé-Hoover thermostat.
+In addition to that the AWH settings are also added where relevant.

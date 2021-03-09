@@ -1,0 +1,7 @@
+This archive contains the input parameters used in the simulations presented in Lundborg, Lidmar and Hess, "The Accelerated Weight Histogram Method for Alchemical Free Energy Calculations", J. Chem. Phys. Submitted.
+
+The contents are restructured for easier use. There are scripts to run each simulation setup. The gmx mdrun parameters in all scripts are very unspecific and should be modified to fit the computational resources used,
+in order to get better performance.
+
+The simulation parameters should all work without modification. The scripts for running are provided as a tool and do not reflect exactly how the simulations were started originally. There are no guarantees that the
+scripts work out of the box.

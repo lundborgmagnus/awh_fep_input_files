@@ -1,0 +1,2 @@
+Only 1 set for each AWH simulation setup is included here. To run the full number (5) sets just copy the directories from, e.g., 16lambda_4workers_set1 to 16lambda_4workers_set{2..5} before running.
+The set with 1 worker already contains 20 simulations, which are evaluated as five sets when calculating the results.

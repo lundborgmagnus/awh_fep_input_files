@@ -1,0 +1,7 @@
+There is one directory for each of the five sets of ethanol FEP simulations. Each is run using 16 lambda states.
+In the first stage 1 ns is run, starting from the output of the previous state to chain the simulations and thereby
+reducing the need of equilibration. After that, the simulations are extended to 19 ns.
+The simulations are run by executing
+./runscript.sh
+in each of the sets of simulations.
+
